@@ -2,7 +2,93 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36aecbb1-9d6e-4116-bdff-33c3e6898d1e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/py4j-0.8.2.1-src.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/pyspark.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kmeans.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/PY4J_LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/accumulators.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/broadcast.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/cloudpickle.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/conf.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/context.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/daemon.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/files.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/heapq3.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/java_gateway.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/join.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/ml/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/ml/classification.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/ml/clustering.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/ml/evaluation.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/ml/feature.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/ml/param/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/ml/param/_shared_params_code_gen.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/ml/param/shared.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/ml/pipeline.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/ml/recommendation.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/ml/regression.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/ml/tests.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/ml/tuning.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/ml/util.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/ml/wrapper.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/classification.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/clustering.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/common.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/evaluation.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/feature.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/fpm.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/linalg/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/linalg/distributed.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/random.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/recommendation.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/regression.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/stat/KernelDensity.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/stat/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/stat/_statistics.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/stat/distribution.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/stat/test.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/tests.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/tree.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/mllib/util.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/profiler.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/rdd.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/rddsampler.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/resultiterable.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/serializers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/shell.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/shuffle.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/sql/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/sql/column.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/sql/context.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/sql/dataframe.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/sql/functions.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/sql/group.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/sql/readwriter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/sql/tests.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/sql/types.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/sql/utils.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/sql/window.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/statcounter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/status.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/storagelevel.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/streaming/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/streaming/context.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/streaming/dstream.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/streaming/flume.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/streaming/kafka.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/streaming/kinesis.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/streaming/mqtt.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/streaming/tests.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/streaming/util.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/tests.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/traceback_utils.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyspark/worker.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="stock-kmeans.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,11 +109,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DownloadStockData.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DownloadStockData.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DownloadStockData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
+            <state relative-caret-position="-4327">
               <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kmeans.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/kmeans.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="1" column="68" selection-start-line="1" selection-start-column="68" selection-end-line="1" selection-end-column="68" />
+              <folding>
+                <element signature="e#785#822#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shared.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pyspark/ml/param/shared.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -35,14 +143,47 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/kmeans.py" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="166" />
     <option name="y" value="91" />
     <option name="width" value="1261" />
     <option name="height" value="941" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyCompatibilityInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -76,6 +217,10 @@
               <option name="myItemId" value="stock-kmeans" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -95,6 +240,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -249,7 +401,7 @@
     <frame x="166" y="91" width="1261" height="941" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980174" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980174" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -278,9 +430,27 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/DownloadStockData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
+        <state relative-caret-position="-4327">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspark/ml/param/shared.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kmeans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="1" column="68" selection-start-line="1" selection-start-column="68" selection-end-line="1" selection-end-column="68" />
+          <folding>
+            <element signature="e#785#822#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
