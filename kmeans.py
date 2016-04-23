@@ -1,22 +1,21 @@
 from __future__ import print_function
-
 import sys
-from operator import add
-
+import os
 from pyspark import SparkContext
 
 
+def mapper(line):
+    line_split = line.split(',')
+    percent_change = -float(line_split[1])/float(line_split[4]) \
+        if line_split[1] < line_split[4] \
+        else float(line_split[4])/float(line_split[1])
+    return line_split[0], percent_change
+
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: wordcount <file>", file=sys.stderr)
-        exit(-1)
     sc = SparkContext(appName="PythonWordCount")
-    lines = sc.textFile(sys.argv[1], 1)
-    counts = lines.flatMap(lambda x: x.split(' ')) \
-                  .map(lambda x: (x, 1)) \
-                  .reduceByKey(add)
-    output = counts.collect()
-    for (word, count) in output:
-        print("%s: %i" % (word, count))
+    map_results = sc.emptyRDD()
+    for filename in os.listdir(sys.argv[1]):
+        lines = sc.textFile(filename, 1)
+        map_results.union(lines[1:].map(mapper))
 
     sc.stop()
