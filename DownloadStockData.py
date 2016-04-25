@@ -6,13 +6,14 @@ NASDAQ_STOCKS = "TFSC TFSCR TFSCU TFSCW PIH FLWS FCTY FCCY SRCE VNET TWOU JOBS C
 
 def main():
     print "Downloading Stock Data..."
+    download_location = "/s/salem/a/nobackup/cs435/owenrd/"
     skip_count = 0
     url_opener = urllib.URLopener()
     for stock in (NYSE_STOCKS + NASDAQ_STOCKS):
         try:
             url_opener.retrieve("http://real-chart.finance.yahoo.com/table.csv?s=" + stock +
                                 "&a=00&b=1&c=2006&d=00&e=1&f=2016&g=d&ignore=.csv",
-                                "/s/salem/a/nobackup/cs435/owenrd/" + stock + ".csv")
+                                download_location + stock + ".csv")
         except IOError:
             skip_count += 1
             continue
