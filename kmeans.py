@@ -3,20 +3,34 @@ import sys
 import os
 from pyspark import SparkContext
 from datetime import datetime
+from pyspark.mllib.clustering import KMeans, KMeansModel
+from numpy import array
 
 
-def mapper(line):
+def mapper(line, filename):
     line_split = line.split(',')
+
+    open = float(line_split[1])
+    close = float(line_split[4])
 
     # if the first value is greater than the second it must be a negative percentage, otherwise calculate
     # percentage normally (open/close if open < close else -close/open)
-    percent_change = -float(line_split[1])/float(line_split[4]) \
-        if line_split[1] < line_split[4] \
-        else float(line_split[4])/float(line_split[1])
+    percent_change = 0.0
+
+    if open > close:
+        percent_change = (1 - (close / open)) * -1
+    else:
+        percent_change = 1 - (open / close)
 
     # send back the key value tuple with the key being the date and the value is the date and percentage change
     # ie. <"12/31/2010", [(12/31/2010).toMilliSeconds(), percentage_change]>
-    return line_split[0], (datetime.strptime(line_split[0], "%Y-%m-%d").strftime('%s'), percent_change)
+    #return line_split[0], [(datetime.strptime(line_split[0], "%Y-%m-%d").strftime('%s'), percent_change)]
+
+    return filename, [percent_change]
+
+
+def reducer(a, b):
+    return a + b
 
 if __name__ == "__main__":
     # Create the spark context
@@ -32,31 +46,33 @@ if __name__ == "__main__":
 
     # For every file in the directory, add it to the RDD so that we can perform operations on it
     for filename in directory:
-
-        # lines is the file given the filename
-        lines = sc.textFile("file:///" + os.path.join(sys.argv[1], filename), 1)
-
-        # remove the head from the files because it is not actually data (we don't want the header)
-        header = lines.first()
-        lines = lines.filter(lambda line: line != header)
-
         try:
+            # lines is the file given the filename
+            lines = sc.textFile("file:///" + os.path.join(sys.argv[1], filename), 1)
+
+            # remove the head from the files because it is not actually data (we don't want the header)
+            header = lines.first()
+            lines = lines.filter(lambda line: line != header)
+
             # Add this file that has been properly mapped to the list of all mapped results
-            result = lines.map(mapper)
-            print(result)
-            map_results.union(result)
+            result = lines.map(lambda line: mapper(line, filename.split(".")[0]))
+            map_results = map_results.union(result)
         except Exception as e:
             print("Error with file " + filename)
             print(e.message)
 
-    output = map_results.collect()
-    for (word, count) in output:
-        print(word + " " + count)
+    map_results = map_results.reduceByKey(reducer)
+    # output = map_results.collect()
 
-    print("---------------------------------------------")
-    print("---------------------------------------------")
-    print(output)
-    print("---------------------------------------------")
-    print("---------------------------------------------")
+    clusters = KMeans.train(map_results.values(), int(map_results.count()/10), maxIterations=300, runs=10, initializationMode="random")
+    # for (key1, value1) in output:
+    #     for (key2, value2) in output:
+    #         print("--------------------------------------------------------------------------------")
+    #         print("Is " + key1 + " in the same cluster as " + key2)
+    #         print(clusters.predict(array(value1)) == clusters.predict(array(value2)))
+    #         print("--------------------------------------------------------------------------------")
+    print("I ran hahahahasdo owen davis the best alive gg no re")
+
+    map_results.saveAsTextFile("out")
 
     sc.stop()

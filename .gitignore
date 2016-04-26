@@ -5,3 +5,5 @@ pyspark/
 logs.txt
 /py4j
 py4j/
+/out
+out/*
