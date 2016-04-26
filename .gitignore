@@ -1,3 +1,7 @@
 .idea
-.idea/
-
+.idea/*
+/pyspark
+pyspark/
+logs.txt
+/py4j
+py4j/
