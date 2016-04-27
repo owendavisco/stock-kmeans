@@ -56,12 +56,12 @@ if __name__ == "__main__":
 
             # Add this file that has been properly mapped to the list of all mapped results
             result = lines.map(lambda line: mapper(line, filename.split(".")[0]))
-            map_results = map_results.union(result)
+            map_results = map_results.union(result).checkPoint()
         except Exception as e:
             print("Error with file " + filename)
             print(e.message)
 
-    map_results = map_results.reduceByKey(reducer)
+    map_results = map_results.reduceByKey(reducer).cache()
     # output = map_results.collect()
 
     clusters = KMeans.train(map_results.values(), int(map_results.count()/10), maxIterations=300, runs=10, initializationMode="random")
