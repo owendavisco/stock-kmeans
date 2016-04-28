@@ -66,8 +66,8 @@ if __name__ == "__main__":
 
 
     map_results = sc.union(results)
-
     map_results = map_results.reduceByKey(reducer).cache()
+    # map_results.saveAsTextFile("out")
 
     """
     print("--------------------------------------------------------------------------------")
@@ -78,7 +78,6 @@ if __name__ == "__main__":
     """
 
     clusters = KMeans.train(map_results.values(), int(map_results.count()/10), maxIterations=300, runs=10, initializationMode="random")
-
-    #map_results.saveAsTextFile("out")
+    clusters.save(sc, "clusters")
 
     sc.stop()
