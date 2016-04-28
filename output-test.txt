@@ -1,0 +1,16 @@
+2016-04-26 00:12:47,185 WARN  [main] util.NativeCodeLoader (NativeCodeLoader.java:<clinit>(62)) - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Traceback (most recent call last):
+  File "/s/bach/j/under/ch73168/stock-kmeans/kmeans.py", line 65, in <module>
+    output = map_results.collect()
+  File "/s/bach/j/under/ch73168/stock-kmeans/pyspark/rdd.py", line 773, in collect
+    port = self.ctx._jvm.PythonRDD.collectAndServe(self._jrdd.rdd())
+  File "/s/bach/j/under/ch73168/stock-kmeans/py4j/java_gateway.py", line 536, in __call__
+    answer = self.gateway_client.send_command(command)
+  File "/s/bach/j/under/ch73168/stock-kmeans/py4j/java_gateway.py", line 364, in send_command
+    response = connection.send_command(command)
+  File "/s/bach/j/under/ch73168/stock-kmeans/py4j/java_gateway.py", line 473, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/lib64/python2.7/socket.py", line 434, in readline
+    data = recv(1)
+KeyboardInterrupt
+2016-04-26 00:19:53,190 WARN  [main] util.NativeCodeLoader (NativeCodeLoader.java:<clinit>(62)) - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable

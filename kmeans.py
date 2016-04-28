@@ -44,6 +44,8 @@ if __name__ == "__main__":
     # Read the directory of the stock data given by the user eg. kmeans.py "/Documents/stock/"
     directory = os.listdir(sys.argv[1])
 
+    results = []
+
     # For every file in the directory, add it to the RDD so that we can perform operations on it
     for filename in directory:
         try:
@@ -56,23 +58,27 @@ if __name__ == "__main__":
 
             # Add this file that has been properly mapped to the list of all mapped results
             result = lines.map(lambda line: mapper(line, filename.split(".")[0]))
-            map_results = map_results.union(result).checkPoint()
+            #map_results = map_results.union(result)
+            results.append(result.cache())
         except Exception as e:
             print("Error with file " + filename)
             print(e.message)
 
+
+    map_results = sc.union(results)
+
     map_results = map_results.reduceByKey(reducer).cache()
-    # output = map_results.collect()
+
+    """
+    print("--------------------------------------------------------------------------------")
+    for (x, y) in map_results.collect():
+        if len(y) != 2517:
+            print("Owen davis is thirsty", x, len(y))
+    print("--------------------------------------------------------------------------------")
+    """
 
     clusters = KMeans.train(map_results.values(), int(map_results.count()/10), maxIterations=300, runs=10, initializationMode="random")
-    # for (key1, value1) in output:
-    #     for (key2, value2) in output:
-    #         print("--------------------------------------------------------------------------------")
-    #         print("Is " + key1 + " in the same cluster as " + key2)
-    #         print(clusters.predict(array(value1)) == clusters.predict(array(value2)))
-    #         print("--------------------------------------------------------------------------------")
-    print("I ran hahahahasdo owen davis the best alive gg no re")
 
-    map_results.saveAsTextFile("out")
+    #map_results.saveAsTextFile("out")
 
     sc.stop()
