@@ -15,24 +15,18 @@ def mapper(line):
 
     return stock_name, percent_changes
 
+
 if __name__ == "__main__":
     sc = SparkContext(appName="ComputeResults")
 
+    model = KMeansModel.load(sc, sys.argv[2])
+
     mapred_results = sc.textFile(sys.argv[1])
-    mapred_results = mapred_results.map(mapper).collect()
-
-    model = KMeansModel.load(sc, "file:///" + sys.argv[2])
-
-    # Create mapping of clusters for every stock
-    clusters = {}
-    for (stock1, value) in mapred_results:
-        stock1 = stock1.encode("ascii", "ignore")
-        for (stock2, value2) in mapred_results:
-            stock2 = stock2.encode("ascii", "ignore")
-            if stock2 != stock1:
-                if model.predict(array(value)) == model.predict(array(value2)):
-                    print("Stock " + stock1 + " and " + stock2 + " are in the same cluster")
-                    clusters[stock1] = clusters[stock1] + [stock2] if stock1 in clusters else [stock2]
+    clusters = mapred_results.map(mapper)\
+        .reduceByKey(lambda a, b: a + b)\
+        .map(lambda stock: (model.predict(array(stock[1])), [stock[0]]))\
+        .reduceByKey(lambda a, b: a + b)\
+        .collect()
 
     with open('result.json', 'w') as fp:
         json.dump(clusters, fp)
