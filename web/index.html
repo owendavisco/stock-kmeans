@@ -26,10 +26,10 @@
     </div>
   </div>
 </nav>
-<h1 id="results-header" style="padding-left: 20px">
-  Results
-</h1>
-<img src="https://www.google.com/finance/getchart?q=GOOGL&p=10Y" />
+<div style="padding-left: 20px">
+  <div id="results-header" class="h1 row">Results</div>
+  <div id="results-header-img" class="row" style="padding: 20px"></div>
+</div>
 <table class="table table-default">
 <tbody id="result-table">
 
@@ -41,21 +41,35 @@
   $.getJSON('/result.json', function(data) { RESULT_JSON = data });
 
   $('#search-button').on('click', function(e) {
-    var searchInput = $('#search-input').text();
-    if(searchInput && RESULT_JSON[searchInput.toUpperCase()]) {
-      displayData(searchInput.toUpperCase());
+    var searchInput = document.getElementById('search-input').value
+    if(searchInput) {
+      for(clusterId in RESULT_JSON) {
+        if(RESULT_JSON[clusterId].indexOf("'" + searchInput.toUpperCase() + "'") > -1) {
+          displayData(searchInput.toUpperCase(), clusterId);
+          return
+        }
+      }
     }
 
   });
 
-  function displayData(searchInput) {
-    $('#results-header').text("Stocks Similar to " + searchInput)
-    var table = $('#result-table');
-    RESULT_JSON[searchInput].forEach(function(stock){
-      var currentRow = $('<tr><tr>')
-      currentRow.append('<th>' + stock + '<th>');
+  function displayData(searchInput, clusterId) {
+    $('#results-header').text("Stocks Similar to " + searchInput);
+    $('#results-header-img').append('<div class="row"><img src="https://www.google.com/finance/getchart?q=' + searchInput + '&p=11Y"/></div>');
+    var table = $('#result-table').empty();
+    RESULT_JSON[clusterId].forEach(function(stock){
+      stock = stock.replace("'", "").replace("'", "")
+      table.append(createTableRow(stock))
     });
   }
+
+  function createTableRow(stock) {
+    var currentRow = $('<tr></tr>')
+    currentRow.append('<th>' + stock + '</th>');
+    currentRow.append('<td><img src="https://www.google.com/finance/getchart?q=' + stock + '&p=10Y"/></td>');
+    return currentRow
+  }
+
 
 </script>
 </html>
