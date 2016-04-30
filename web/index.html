@@ -55,6 +55,7 @@
 
   function displayData(searchInput, clusterId) {
     $('#results-header').text("Stocks Similar to " + searchInput);
+    $('#results-header-img').empty();
     $('#results-header-img').append('<div class="row"><img src="https://www.google.com/finance/getchart?q=' + searchInput + '&p=11Y"/></div>');
     var table = $('#result-table').empty();
     RESULT_JSON[clusterId].forEach(function(stock){
