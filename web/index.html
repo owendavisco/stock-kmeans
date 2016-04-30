@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cluster Search</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Stock Cluster Search</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input id="search-input" type="text" class="form-control" placeholder="Search for..." style="margin: 8px;">
+          <span class="input-group-btn">
+            <button id="search-button" class="btn btn-default navbar-btn" type="button">Search</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<h1 id="results-header" style="padding-left: 20px">
+  Results
+</h1>
+<img src="https://www.google.com/finance/getchart?q=GOOGL&p=10Y" />
+<table class="table table-default">
+<tbody id="result-table">
+
+</tbody>
+</table>
+</body>
+<script>
+  var RESULT_JSON;
+  $.getJSON('/result.json', function(data) { RESULT_JSON = data });
+
+  $('#search-button').on('click', function(e) {
+    var searchInput = $('#search-input').text();
+    if(searchInput && RESULT_JSON[searchInput.toUpperCase()]) {
+      displayData(searchInput.toUpperCase());
+    }
+
+  });
+
+  function displayData(searchInput) {
+    
+
+    var table = $('#result-table');
+    RESULT_JSON[searchInput].forEach(function(){
+
+    });
+  }
+
+</script>
+</html>

@@ -26,7 +26,7 @@ if __name__ == "__main__":
         .reduceByKey(lambda a, b: a + b)\
         .map(lambda stock: (model.predict(array(stock[1])), [stock[0]]))\
         .reduceByKey(lambda a, b: a + b)\
-        .collect()
+        .collectAsMap()
 
     with open('result.json', 'w') as fp:
         json.dump(clusters, fp)
