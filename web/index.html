@@ -49,11 +49,11 @@
   });
 
   function displayData(searchInput) {
-    
-
+    $('#results-header').text("Stocks Similar to " + searchInput)
     var table = $('#result-table');
-    RESULT_JSON[searchInput].forEach(function(){
-
+    RESULT_JSON[searchInput].forEach(function(stock){
+      var currentRow = $('<tr><tr>')
+      currentRow.append('<th>' + stock + '<th>');
     });
   }
 
